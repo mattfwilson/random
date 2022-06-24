@@ -39,6 +39,11 @@ item_certified = ['Acrobat', 'Aviator','Goalkeeper', 'Guradian', 'Juggler', 'Par
 
 def openCrate(rarity, painted, certified):
     listRoll = []
+
+    randItem = random.randint(1, 100)
+    randPainted = random.randint(1, 100)
+    randCertified = random.randint(1, 100)
+
     roll = random.choice(rarity)
     rollPainted = random.choice(item_painted)
     rollCertified = random.choice(item_certified)
@@ -57,8 +62,5 @@ def openCrate(rarity, painted, certified):
         print(f'{roll}')
     return listRoll
 
-randItem = random.randint(1, 100)
-randPainted = random.randint(1, 100)
-randCertified = random.randint(1, 100)
 
 print(randItem)
