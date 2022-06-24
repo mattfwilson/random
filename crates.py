@@ -62,3 +62,5 @@ randPainted = random.randint(1, 100)
 randCertified = random.randint(1, 100)
 
 print(randItem)
+
+# test
