@@ -1,10 +1,10 @@
-#Rare Item: 55%
-#Very Rare Item: 28%
-#Import Item: 12%
-#Exotic Item: 4%
-#Black Market Item: 1%
-#Chance of receiving Painted attribute: 25%
-#Chance of receiving Certified attribute: 25%
+# Rare Item: 55%
+# Very Rare Item: 28%
+# Import Item: 12%
+# Exotic Item: 4%
+# Black Market Item: 1%
+# Chance of receiving Painted attribute: 25%
+# Chance of receiving Certified attribute: 25%
 
 import random
 
@@ -38,7 +38,21 @@ def openCrate(rarity, painted, certified):
         'Solar Flare': [5, 'Goal Explosion', True, True],
     }
 
-    item_painted = ['Black', 'Burnt Sienna', 'Cobalt', 'Crimson', 'Forest Green', 'Grey', 'Lime', 'Orange', 'Pink', 'Purple', 'Saffron', 'Sky Blue', 'Titanium White']
+    item_painted = { 
+        1: 'Burnt Sienna',
+        1: 'Cobalt',
+        1: 'Sky Blue',
+        1: 'Forest Green',
+        2: 'Lime',
+        2: 'Orange',
+        2: 'Pink',
+        2: 'Purple',
+        2: 'Saffron',
+        2: 'Grey',
+        3: 'Crimson',
+        3: 'Black',
+        3: 'Titanium White'
+    }
     item_certified = ['Acrobat', 'Aviator','Goalkeeper', 'Guradian', 'Juggler', 'Paragon', 'Playmaker', 'Scorer', 'Show-Off', 'Sniper', 'Striker', 'Sweeper', 'Tactician', 'Turtle', 'Victor']
 
     randItem = random.randint(1, 100)
