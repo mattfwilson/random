@@ -8,36 +8,39 @@
 
 import random
 
-def openCrate(rarity, painted, certified):
+def openCrate():
 
     crate_roll = []
+    types = ['Decal', 'Animated Decal', 'Paint Finish', 'Body', 'Wheels', 'Rocket Boost', 'Trail', 'Goal Explosion']
 
+    # weight: [name, type, paintable, certifiable]
     players_choice = {
-        'Dragon Lord': [1, 'Decal', False, True],
-        'Funny Book': [1, 'Decal', False, True],
-        'Lone Wolf': [1, 'Decal', False, True],
-        'StarLighter': [1, 'Decal', False, True],
-        'Pearlescent Matte': [1, 'Paint Finish', False, True],
+        1: ['Dragon Lord', types[0], False, True],
+        1: ['Funny Book', types[0], False, True],
+        1: ['Lone Wolf', types[0], False, True],
+        1: ['StarLighter', types[0], False, True],
+        1: ['Pearlescent Matte', types[2], False, True],
 
-        'Chakram': [2, 'Wheels', True, True],
-        'Reaper': [2, 'Wheels', True, True],
-        'Gaiden': [2, 'Wheels', True, True],
-        'Yamane': [2, 'Wheels', True, True],
+        2: ['Chakram', types[4], True, True],
+        2: ['Reaper', types[4], True, True],
+        2: ['Gaiden', types[4], True, True],
+        2: ['Yamane', types[4], True, True],
 
-        'Jäger 619 RS': [3, 'Body', True, True],
-        'Twinzer': [3, 'Body', True, True],
-        'Comet': [3, 'Rocket Boost', False, True],
+        3: ['Jäger 619 RS', types[3], True, True],
+        3: ['Twinzer', types[3], True, True],
+        3: ['Comet', types[5], False, True],
 
-        'Draco': [4, 'Wheels', True, True],
-        'Zomba': [4, 'Wheels', True, True],
-        'Infinium': [4, 'Wheels', True, True],
+        4: ['Draco', types[4], True, True],
+        4: ['Zomba', types[4], True, True],
+        4: ['Infinium', types[4], True, True],
 
-        'Dissolver': [5, 'Animated Decal', False, True],
-        'Fire God': [5, 'Animated Decal', False, True],
-        'Mainframe': [5, 'Animated Decal', False, True],
-        'Solar Flare': [5, 'Goal Explosion', True, True],
+        5: ['Dissolver', types[1], False, True],
+        5: ['Fire God', types[1], False, True],
+        5: ['Mainframe', types[1], False, True],
+        5: ['Solar Flare', types[7], True, True]
     }
 
+    # weights = 1: 50%, 2: 35%, 3: 15%
     item_painted = { 
         1: 'Burnt Sienna',
         1: 'Cobalt',
@@ -53,6 +56,7 @@ def openCrate(rarity, painted, certified):
         3: 'Black',
         3: 'Titanium White'
     }
+    
     item_certified = ['Acrobat', 'Aviator','Goalkeeper', 'Guradian', 'Juggler', 'Paragon', 'Playmaker', 'Scorer', 'Show-Off', 'Sniper', 'Striker', 'Sweeper', 'Tactician', 'Turtle', 'Victor']
 
     randItem = random.randint(1, 100)
