@@ -63,17 +63,18 @@ def openCrate():
     randPainted = random.randint(1, 100)
     randCertified = random.randint(1, 100)
 
-    roll = random.choice(rarity)
+    roll = random.choice(crate_roll)
     rollPainted = random.choice(item_painted)
     rollCertified = random.choice(item_certified)
     crate_roll.append(roll)
-    if painted <= 25:
+    
+    if randPainted <= 25:
         crate_roll.append(rollPainted)
         print(f'{roll}, PAINTED: {rollPainted}')
-    elif certified <= 25:
+    elif randCertified <= 25:
         crate_roll.append(rollCertified)
         print(f'{roll}, CERTIFIED: {rollCertified}')
-    elif painted <= 25 and certified <= 25:
+    elif randPainted <= 25 and certified <= 25:
         crate_roll.append(rollPainted)
         crate_roll.append(rollCertified)
         print(f'{roll}, PAINTED: {rollPainted}, CERTIFIED: {rollCertified}')
