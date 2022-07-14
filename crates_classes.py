@@ -8,6 +8,8 @@ import random
 #Chance of receiving Painted attribute: 25%
 #Chance of receiving Certified attribute: 25%
 
+count = 25
+
 class PlayersChoice():
     
     rare = ['Dragon Lord', 'Funny Book', 'Lone Wolf', 'StarLighter', 'Pearlescent Matte']
@@ -15,29 +17,37 @@ class PlayersChoice():
     imports = ['Jäger 619 RS', 'Twinzer', 'Comet']
     exotic = ['Draco', 'Zomba', 'Infinium']
     blackMarket = ['Dissolver', 'Fire God', 'Mainframe', 'Solar Flare']
-    item_painted = ['Black', 'Burnt Sienna', 'Cobalt', 'Crimson', 'Forest Green', 'Grey', 'Lime', 'Orange', 'Pink', 'Purple', 'Saffron', 'Sky Blue', 'Titanium White']
-    item_certified = ['Acrobat', 'Aviator','Goalkeeper', 'Guradian', 'Juggler', 'Paragon', 'Playmaker', 'Scorer', 'Show-Off', 'Sniper', 'Striker', 'Sweeper', 'Tactician', 'Turtle', 'Victor']
+
+    def painted():
+        item_painted = ['Black', 'Burnt Sienna', 'Cobalt', 'Crimson', 'Forest Green', 'Grey', 'Lime', 'Orange', 'Pink', 'Purple', 'Saffron', 'Sky Blue', 'Titanium White']
+        roll = random.choices(item_painted, weights=[2, 3, 3, 2, 6, 3, 6, 6, 6, 6, 6, 4, 1])
+        return roll
+
+    def certified():
+        item_certified = ['Acrobat', 'Aviator','Goalkeeper', 'Guradian', 'Juggler', 'Paragon', 'Playmaker', 'Scorer', 'Show-Off', 'Sniper', 'Striker', 'Sweeper', 'Tactician', 'Turtle', 'Victor']
+        roll = random.choices(item_certified)
+        return roll
 
     itemRoll = random.randint(1, 100)
     paintedRoll = random.randint(1, 4)
     certifiedRoll = random.randint(1, 4)
 
     if itemRoll <= 55:
-        pass
+        rareItem = random.choices(rare)
+        print(rareItem, itemRoll)
     elif itemRoll > 55 and itemRoll <= 83:
-        pass
+        veryRareItem = random.choices(veryRare)
+        print(veryRareItem, itemRoll)
     elif itemRoll > 83 and itemRoll <= 95:
-        pass
+        importsItem = random.choices(imports)
+        print(importsItem, itemRoll)
     elif itemRoll > 95 and itemRoll <= 99:
-        pass
+        exoticItem = random.choices(exotic)
+        print(exoticItem, itemRoll)
     else:
-        pass
+        blackMarketItem = random.choices(blackMarket)
+        print(blackMarketItem, itemRoll)
 
-    def item():
-        pass
-
-    def painted():
-        pass
-
-    def certified():
-        pass
+while count > 0:
+    PlayersChoice()
+    count -= 1
